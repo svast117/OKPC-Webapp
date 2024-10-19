@@ -1,0 +1,574 @@
+/* General styles for the entire application */
+::root {
+  --textblack: rgb(0, 0%, 0%, 0.84);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x:show;
+    scroll-snap-type: y mandatory;
+    font-family: Arial, sans-serif;
+}
+
+.scroller {
+  scroll-snap-type: y mandatory;
+}
+
+.scroller > section {
+  scroll-snap-align: start;
+  scroll-margin: 35px;
+}
+
+header {
+  margin:0;
+  display:block;
+  position: fixed;
+  width: 98.825%;
+  background: #ffffff;
+  color: var(--textblack);
+  z-index: 1000;
+}
+
+.headerfix {
+  margin:0;
+  display:block;
+  position: fixed;
+  width: 98.825%;
+  background: #ffffff;
+  color: var(--textblack);
+  z-index: 1000;
+}
+
+header nav ul {
+    display:flex;
+    align-items: left;
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 4px 2px;
+    display: inline-block;
+}
+
+.barLogo {
+  display: inline-block;
+  right:10px;
+  position:absolute;
+  height: 60px;
+}
+
+.circleLogo{
+    display: inline-block;
+    height: 60px;
+    padding: 0px 32px;
+}
+
+/* CSS */
+header nav ul li a {
+  appearance: none;
+  background-color: #ffffff;
+  border-width: 0;
+  box-sizing: border-box;
+  color: var(--textblack);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+header nav ul li a span {
+    z-index: 1;
+    opacity:1;
+    position: relative;
+  }
+
+header nav ul li a:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  opacity: 0.50;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+header nav ul li a:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+header nav ul li a:after{
+  background-color: #ffffff;
+}
+
+.section {
+  scroll-snap-align: start;
+  display:block;
+  max-width: 100%;
+  width: auto;
+  height: 97vh;
+  position: relative;
+  background-size: cover;
+  background-position: right;
+  object-fit: stretch;
+  scroll-margin: 50px;
+}
+
+.content {
+  padding: 2.0%;
+  display:block;
+  position:absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: var(--textblack);
+  text-align: center;
+  width: 55%;
+  background-color: rgb(100%, 100%, 100%, 0.4);
+  border-radius: 20px;
+  transition: 0.25s ease-in-out;
+}
+
+.content:hover {
+  background-color: rgb(100%, 100%, 100%, 0.8);
+}
+
+.nonhovercontent {
+  padding: 2.0%;
+  display:block;
+  position:absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: var(--textblack);
+  text-align: center;
+  width: 55%;
+  background-color: rgb(100%, 100%, 100%, 0.8);
+  border-radius: 20px;
+}
+
+.P2V1 {
+  /* Make video to at least 100% wide and tall */
+  max-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index:-1;
+}
+
+.missionText {
+  font-size:20px;
+  color: rgb(0, 0%, 0%, 0.84);
+  font-family:"Roboto";
+}
+
+.P2text {
+  font-size:18px;
+  color: rgb(0, 0%, 0%, 0.84);
+  font-family:"Roboto";
+}
+
+.projectDemo {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3.5px;
+  transition: 600ms ease-in-out;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 1.2rem;
+  margin-top:0.3rem;
+  color: var(--textblack);
+  outline: none;
+  text-align: center;
+}
+
+.projectDemo:hover {
+  font-variation-settings: "wght" 582; 
+  letter-spacing: 3px;
+}
+
+h2 {
+  margin-top:10px;
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+}
+
+footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    background: #ffffff;
+    color: var(--textblack);
+    position:relative;
+    bottom: 0;
+    width: 98.25%;
+}
+
+.footerText {
+  display: flex;
+  text-align: center;
+  font-size: 18px;
+  color: var(--textblack);
+  font-family: "Raleway", serif;
+}
+
+.footerLogo {
+  display: inline-block;
+  height: 60px;
+  padding: 0px 32px;
+}
+
+.highlight {
+  color: #ffffff;
+  text-shadow: 3px 3px 2px #000000, 2px -1px 1px #000000, -1px 1px 1px #000000, -1px -1px 1px #000000; 
+}
+
+.highlight:hover {
+  color: var(--textblack);
+  text-shadow:none;
+}
+
+.highlight.c1:hover {
+  background-color: #FDFFB6;
+}
+.highlight.c2:hover {
+  background-color: #D9EDF8;
+}
+.highlight.c3:hover {
+  background-color: #DEDAF4;
+}
+
+contact ul li {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  list-style:none;
+}
+
+contact ul li a {
+  display:inline-block;
+  position:relative;
+  width:100px;
+  height:100px;
+  line-height:100px;
+  font-size:40px;
+  text-align:center;
+  text-decoration:none;
+  color:#404040;
+  transition:.5s;
+}
+
+contact ul li a span {
+  position:absolute;
+  transition: transform .5s;
+}
+contact ul li a span:nth-child(1),
+contact ul li a span:nth-child(3){
+  width:100%;
+  height:3px;
+  background:#404040;
+}
+contact ul li a span:nth-child(1) {
+  top:0;
+  left:0;
+  transform-origin: right;
+}
+contact ul li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition:transform .5s;
+}
+
+contact ul li a span:nth-child(3) {
+  bottom:0;
+  left:0;
+  transform-origin: left;
+}
+contact ul li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition:transform .5s;
+}
+
+contact ul li a span:nth-child(2),
+contact ul li a span:nth-child(4){
+  width:3px;
+  height:100%;
+  background:#404040;
+}
+contact ul li a span:nth-child(2) {
+  top:0;
+  left:0;
+  transform:scale(0);
+  transform-origin: bottom;
+}
+contact ul li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition:transform .5s;
+}
+contact ul li a span:nth-child(4) {
+  top:0;
+  right:0;
+  transform:scale(0);
+  transform-origin: top;
+}
+contact ul li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition:transform .5s;
+}
+
+.instagram:hover {
+  color: #c32aa3;
+}
+
+.instagram:hover span { 
+  background: #c32aa3;
+}
+
+contact ul li a:hover:nth-child(3) {
+  color: #c32aa3;
+}
+contact ul li a:hover:nth-child(4) {
+  color: #dd4b39;
+}
+
+.modalContainer {
+  display: inline-block;
+  padding:10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.modalIcon {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: transform 0.5s;
+  border-radius: 5px;
+}
+
+.modalIcon:hover{
+  transform: scale(1.25);
+  transform-origin: center;
+}
+
+.modalTitle {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  font-family: 'Teko', sans-serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.glowText {
+  margin: 0px;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+  font-family: 'Teko', sans-serif;
+  font-size: 6.5rem;
+  text-transform: uppercase;
+  animation: glow 2.5s ease-in-out infinite alternate;
+  text-align: center;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #2d9da9;
+  }
+  to {
+    text-shadow: 0 0 40px #34b3c1, 0 0 10px #4dbbc7;
+  }
+}
+
+.titlePrelude {
+  margin-bottom: 0;
+  font-size: 24px;
+  color: #444;
+  word-spacing: 1px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-template-rows: 27px 0;
+  grid-gap: 20px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.titlePrelude:after,.titlePrelude:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  height: 5px;
+}
+
+.pageBanner {
+  width: 100%;
+  height:auto;
+}
+
+.desLink{
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s;
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.desLink:hover{
+  background-color: #1e293b;
+  color: #fff;
+} 
+
+@media (min-width: 768px) {
+  .desLink {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+.missionStatement {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.missionStatement:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+.missionStatement:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+@font-face {
+  src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+    format("woff2");
+  font-family: "Meta";
+  font-style: normal;
+  font-weight: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.missionTitle {
+  margin-top:20px;
+  margin-bottom:0;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 5em;
+  padding-left:0;
+  padding-right:0;
+  position: relative;
+  background-image: linear-gradient(gold, gold);
+  background-size: 60% 7.5px;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  transition: background-size .7s, background-position .5s ease-in-out;
+}
+
+.missionTitle:hover {
+  background-size: 65% 100%;
+  background-position: 50% 50%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+.abtTitle {
+  margin-top: 20px;
+  margin-bottom:0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 5rem;
+  transition: .5s ease-in-out;
+  letter-spacing: 3px;
+}
+
+.abtText {
+  font-size:21px;
+  color: rgb(0, 0%, 0%, 0.84);
+  font-family:"Roboto";
+}
